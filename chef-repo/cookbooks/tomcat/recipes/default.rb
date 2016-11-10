@@ -44,3 +44,12 @@ execute 'chmod g+x conf'
 
 execute 'chown -R tomcat webapps/ work/ temp/ logs/'
 
+template '/etc/systemd/system/tomcat.service' do
+  source 'tomcat.service.erb'
+end
+
+execute 'systemctl daemon-reload'
+
+service 'tomcat' do
+  action [:start, :enable]
+end
