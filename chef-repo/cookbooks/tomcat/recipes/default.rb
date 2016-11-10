@@ -37,10 +37,10 @@ directory '/opt/tomcat/conf' do
 end
 
 # TODO: NOT DESIRED STATE
-execute 'chmod -R g+r conf'
+execute 'chmod -R g+r /opt/tomcat/conf'
 
 # TODO: NOT DESIRED STATE
-execute 'chmod g+x conf'
+execute 'chmod g+x /opt/tomcat/conf'
 
 execute 'chown -R tomcat webapps/ work/ temp/ logs/'
 
