@@ -16,3 +16,14 @@ user 'tomcat' do
   group 'tomcat'
   home '/opt/tomcat'
 end
+
+# curl -O http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
+remote_file 'apache-tomcat-8.5.5.tar.gz' do
+  source 'http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz'
+end
+
+directory '/opt/tomcat' do
+  # action :create
+end
+
+execute 'tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1'
