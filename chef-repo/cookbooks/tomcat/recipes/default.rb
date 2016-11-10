@@ -42,7 +42,7 @@ execute 'chmod -R g+r /opt/tomcat/conf'
 # TODO: NOT DESIRED STATE
 execute 'chmod g+x /opt/tomcat/conf'
 
-execute 'chown -R tomcat webapps/ work/ temp/ logs/'
+execute 'chown -R tomcat /opt/tomcat/webapps/ work/ temp/ logs/'
 
 template '/etc/systemd/system/tomcat.service' do
   source 'tomcat.service.erb'
