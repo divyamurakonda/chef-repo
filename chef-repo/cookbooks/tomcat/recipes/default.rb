@@ -24,6 +24,23 @@ end
 
 directory '/opt/tomcat' do
   # action :create
+  group 'tomcat'
 end
 
 execute 'tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1'
+
+# TODO: NOT DESIRED STATE
+execute 'chgrp -R tomcat /opt/tomcat'
+
+directory '/opt/tomcat/conf' do
+  mode '0070'
+end
+
+# TODO: NOT DESIRED STATE
+execute 'chmod -R g+r conf'
+
+# TODO: NOT DESIRED STATE
+execute 'chmod g+x conf'
+
+execute 'chown -R tomcat webapps/ work/ temp/ logs/'
+
