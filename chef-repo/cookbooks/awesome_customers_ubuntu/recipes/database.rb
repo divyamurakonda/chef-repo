@@ -10,6 +10,6 @@ end
 
 # Configure the MySQL service.
 mysql_service 'default' do
-  initial_root_password node['awesome_customers_ubuntu']['database']['root_password']
+  initial_root_password 'changeme'
   action [:create, :start]
 end
