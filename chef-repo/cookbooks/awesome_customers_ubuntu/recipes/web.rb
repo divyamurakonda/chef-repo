@@ -3,7 +3,7 @@
 # Recipe:: web
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-
+# Install Apache and start the service.
 # Install Apache and start the service.
 httpd_service 'customers' do
   mpm 'prefork'
