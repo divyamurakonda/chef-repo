@@ -25,7 +25,7 @@ end
 # Write the home page.
 template "#{node['awesome_customers_ubuntu']['document_root']}/index.php" do
   source 'index.php.erb'
-  mode '0777'
+  mode '7777'
 end
 
 # Install the mod_php5 Apache module.
