@@ -15,4 +15,3 @@ version '0.1.0'
 # source_url 'https://github.com/<insert_org_here>/awesome_customers_ubuntu' if respond_to?(:source_url)
 
 depends 'apt', '~> 5.0.0'
-depends 'firewall', '~> 2.5'
