@@ -25,7 +25,7 @@ end
 # Write the home page.
 template "#{node['awesome_customers_ubuntu']['document_root']}/index.php" do
   source 'index.php.erb'
-  mode '0644'
+  mode '0777'
   owner node['awesome_customers_ubuntu']['user']
   group node['awesome_customers_ubuntu']['group']
 end
