@@ -23,9 +23,20 @@ directory node['awesome_customers_ubuntu']['document_root'] do
 end
 
 # Write the home page.
-file "#{node['awesome_customers_ubuntu']['document_root']}/index.html" do
-  content '<html>This is a placeholder</html>'
+template "#{node['awesome_customers_ubuntu']['document_root']}/index.php" do
+  source 'index.php.erb'
   mode '0644'
   owner node['awesome_customers_ubuntu']['user']
   group node['awesome_customers_ubuntu']['group']
+end
+
+# Install the mod_php5 Apache module.
+httpd_module 'php5' do
+  instance 'customers'
+end
+
+# Install php5-mysql.
+package 'php5-mysql' do
+  action :install
+  notifies :restart, 'httpd_service[customers]'
 end
