@@ -16,3 +16,4 @@ version '0.1.0'
 
 depends 'apt', '~> 5.0.0'
 depends 'httpd', '~> 0.4.4'
+depends 'mysql', '~> 8.1.1'
