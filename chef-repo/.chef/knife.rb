@@ -7,3 +7,4 @@ node_name                "admin"
 client_key               "#{current_dir}/admin.pem"
 chef_server_url          "https://chefserver.attlocal.net/organizations/itpn"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+knife[:editor] =  "Notepad"
